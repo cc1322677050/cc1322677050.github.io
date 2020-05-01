@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="计算机基础," />
 
 
 
@@ -79,11 +79,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="阿成的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2020/04/index.html">
+<meta name="description" content="体系结构类型 结构 关键特性 代表    单指令流单数据流（SISD） 控制部分:一个处理器:一个主存模块:一个 无 单系统处理器   单指令流多数据流（SIMD） 控制部分:一个处理器:多个主存模块:多个 各处理器已异步的形式执行同一条指令 并行处理机阵列处理机超级向量处理机   多指令流单数据流（MISD） 控制部分:多个处理器:一个主存模块:多个 被证明不可能,至少是不实际的 目前没有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flynn分类法">
+<meta property="og:url" content="http://yoursite.com/2018/05/01/Flynn%E5%88%86%E7%B1%BB%E6%B3%95/index.html">
 <meta property="og:site_name" content="阿成的个人博客">
+<meta property="og:description" content="体系结构类型 结构 关键特性 代表    单指令流单数据流（SISD） 控制部分:一个处理器:一个主存模块:一个 无 单系统处理器   单指令流多数据流（SIMD） 控制部分:一个处理器:多个主存模块:多个 各处理器已异步的形式执行同一条指令 并行处理机阵列处理机超级向量处理机   多指令流单数据流（MISD） 控制部分:多个处理器:一个主存模块:多个 被证明不可能,至少是不实际的 目前没有">
+<meta property="article:published_time" content="2018-05-01T01:38:43.000Z">
+<meta property="article:modified_time" content="2020-05-01T05:09:33.181Z">
 <meta property="article:author" content="阿成啊">
+<meta property="article:tag" content="计算机基础">
 <meta name="twitter:card" content="summary">
 
 
@@ -92,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -114,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2020/04/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/01/Flynn分类法/"/>
 
 
 
 
 
-  <title>归档 | 阿成的个人博客</title>
+  <title>Flynn分类法 | 阿成的个人博客</title>
   
 
 
@@ -139,12 +144,12 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta custom-logo">
     
 
     <div class="custom-logo-site-title">
@@ -178,19 +183,9 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -198,7 +193,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -208,7 +203,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -218,9 +213,19 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -243,74 +248,206 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 1 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2020">2020</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/Flynn%E5%88%86%E7%B1%BB%E6%B3%95/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿成啊">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://chengcq.oss-cn-beijing.aliyuncs.com/blogs/images/1575773797784.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿成的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2020/04/29/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url">
-              
-                <span itemprop="name">Lambda表达式</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Flynn分类法</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-04-29T20:06:12+08:00"
-              content="2020-04-29" >
-          04-29
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T09:38:43+08:00">
+                2018-05-01
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%B8%AD%E7%BA%A7%E8%AE%BE%E8%AE%A1%E5%B8%88/" itemprop="url" rel="index">
+                    <span itemprop="name">软件中级设计师</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <table>
+<thead>
+<tr>
+<th>体系结构类型</th>
+<th>结构</th>
+<th>关键特性</th>
+<th>代表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单指令流单数据流（SISD）</td>
+<td>控制部分:一个<br>处理器:一个<br>主存模块:一个</td>
+<td>无</td>
+<td>单系统处理器</td>
+</tr>
+<tr>
+<td>单指令流多数据流（SIMD）</td>
+<td>控制部分:一个<br>处理器:多个<br>主存模块:多个</td>
+<td>各处理器已异步的形式执行同一条指令</td>
+<td>并行处理机<br>阵列处理机<br>超级向量处理机</td>
+</tr>
+<tr>
+<td>多指令流单数据流（MISD）</td>
+<td>控制部分:多个<br>处理器:一个<br>主存模块:多个</td>
+<td>被证明不可能,至少是不实际的</td>
+<td>目前没有，有文献称流水线计算机为此类</td>
+</tr>
+<tr>
+<td>多指令多数据流（MIMD）</td>
+<td>控制部分:多个<br>处理器:多个<br>主存模块:多个</td>
+<td>能够实现作业，任务，指令等各级全面并行</td>
+<td>多处理系机系统<br>多计算机</td>
+</tr>
+</tbody></table>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag"><i class="fa fa-tag"></i> 计算机基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/01/Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="next" title="Lambda表达式">
+                <i class="fa fa-chevron-left"></i> Lambda表达式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/01/stream%E6%B5%81/" rel="prev" title="stream流">
+                stream流 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -318,6 +455,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -344,11 +485,11 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
+                src="https://chengcq.oss-cn-beijing.aliyuncs.com/blogs/images/1575773797784.jpg"
                 alt="阿成啊" />
             
               <p class="site-author-name" itemprop="name">阿成啊</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">会者定离,一期一祈</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -356,16 +497,34 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -425,15 +584,9 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
@@ -541,6 +694,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
